@@ -1,10 +1,5 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
 
-
-    <div id="content-wrapper">
-
-      <div class="container-fluid">
-
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">

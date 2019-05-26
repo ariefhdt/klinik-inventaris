@@ -90,7 +90,7 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav bg-blue-1">
       <li class="nav-item <?php echo $this->uri->segment(2)== 'home'? 'active': ''?>">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?php echo site_url("admin/home")?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
@@ -115,10 +115,9 @@
           <span>Maintanance</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item " href="#">Add Category</a>
-          <a class="dropdown-item" href="#">Add Location</a>
-          <a class="dropdown-item" href="#">Add Color</a>
-          <a class="dropdown-item" href="#">Add Status</a>
+          <a class="dropdown-item " href="<?php echo site_url("admin/category")?>">Add Category</a>
+          <a class="dropdown-item" href="<?php echo site_url("admin/location")?>">Add Location</a>
+          <a class="dropdown-item" href="<?php echo site_url("admin/status")?>">Add Status</a>
         </div>
       </li>
       <li class="nav-item">
@@ -127,3 +126,6 @@
           <span>Users</span></a>
       </li>
     </ul>
+
+    <div id="content-wrapper">
+        <div class="container-fluid">
