@@ -19,7 +19,7 @@ class Category extends CI_Controller
 		$this->load->view("admin/vAddCategory", $data);
 	}
 
-	function add()
+	function add() 
 	{
 		$category = $this->Mcategory;
 		$validation = $this->form_validation;
@@ -27,8 +27,37 @@ class Category extends CI_Controller
 		if ($validation->run()) {
 			$category->save();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
+			redirect(site_url("admin/category"));
 		}
 
 		$this->load->view("admin/vAddCategory");
+	}
+	function lihat($id=null)
+	{
+		$category = $this->Mcategory;
+		$data["lihat"] = $category->getById($id);
+		$this->load->view("admin/vLihatCategory", $data);
+	}
+
+	function edit($id=null)
+	{
+		$category = $this->Mcategory;
+		$validation = $this->form_validation;
+
+		if ($validation->run()) {
+			$category->update();
+			$this->session->set_flashdata('success', 'Berhasil ditambahkan');
+			redirect(site_url("admin/category"));
+		}
+
+		$data["edit"] = $category->getById($id);
+		$this->load->view("admin/vEditCategory", $data);
+	}
+
+	function delete($id)
+	{
+		if ($this->Mcategory->delete($id)) {
+			redirect(site_url("admin/category"));
+		}
 	}
 }

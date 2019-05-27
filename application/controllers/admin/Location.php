@@ -15,4 +15,20 @@ class Location extends CI_Controller
 	{
 		$this->load->view("admin/vAddLocation");
 	}
+
+	function add()
+	{
+		$location = $this->Mlocation;
+		$validation = $this->form_validation;
+
+		if ($validation->run()) {
+			$location->save();
+			$this->session->set_flashdata('success', 'Berhasil ditambahkan');
+			redirect(site_url("admin/location"));
+		}
+
+		$this->load->view("admin/vAddLocation");
+
+
+	}
 }

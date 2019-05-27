@@ -1,6 +1,7 @@
 <?php $this->load->view("admin/_partials/atas.php") ?>
 
 
+
 <!-- Judul Halaman -->
 <h2 class="text-center">Add Category</h2>
 
@@ -32,9 +33,9 @@
 	</form>
 
 	</div>
-	<div class="card-footer small text-muted">
+	<!-- <div class="card-footer small text-muted">
 		* required fields
-	</div>
+	</div> -->
 
 	<br>
 	<hr>
@@ -57,19 +58,20 @@
                   </tr>
                 </thead>
                 <tbody>
+                	<?php foreach($categories as $row):?>
                   <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>System Architect</td>
+                    <td><?php echo $row->code;?></td>
+                    <td><?php echo $row->name; ?></td>
+                    <td><?php echo $row->description?></td>
                     <td width="180" class="text-center">
-			            <a href="<?php echo site_url('') ?>"
+			            <a href="<?php echo site_url('admin/category/lihat/'.$row->category_id); ?>"
 			             class="btn btn-small"><i class="fas fa-eye"></i></a>
-			            <a href="<?php echo site_url('') ?>"
+			            <a href="<?php echo site_url('admin/category/edit/'.$row->category_id); ?>"
 			             class="btn btn-small"><i class="fas fa-edit"></i></a>
-			            <a onclick="deleteConfirm('') ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
+			            <a onclick="deleteConfirm('<?php echo site_url('admin/category/delete/'.$row->category_id)?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
 			          </td>
-                    
                   </tr>
+              		<?php endforeach;?>
                 </tbody>
               </table>
             </div>

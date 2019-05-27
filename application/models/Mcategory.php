@@ -17,13 +17,27 @@ class Mcategory extends CI_Model
 		$this->db->insert("tb_categories", $this);
 	}
 
-	function getAll()
+	public function getAll()
 	{
-		$this->db->get("tb_categories")->result();
+		return $this->db->get("tb_categories")->result();
 	}
 
 	function getById($id)
 	{
 		return $this->db->get_where("tb_categories", ["category_id" => $id])->row();
+	}
+
+	public function update()
+	{
+		$post = $this->input->post();
+		$this->code = $post["code"];
+		$this->name = $post["name"];
+		$this->description = $post["description"];
+		$this->db->update("tb_categories", $this, array('category_id' =>$post['id']));
+	}
+
+	public function delete()
+	{
+		return $this->db->delete("tb_categories", array("category_id" =>$id));
 	}
 }
