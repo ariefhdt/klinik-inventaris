@@ -47,7 +47,7 @@ class Category extends CI_Controller
 		if ($validation->run()) {
 			$category->update();
 			$this->session->set_flashdata('success', 'Berhasil ditambahkan');
-			redirect(site_url("admin/category"));
+			redirect(site_url('admin/category'));
 		}
 
 		$data["edit"] = $category->getById($id);

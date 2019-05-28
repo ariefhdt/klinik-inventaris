@@ -1,6 +1,5 @@
 <?php $this->load->view("admin/_partials/atas.php") ?>
 
-
 <!-- Judul Halaman -->
 <h2 class="text-center">Add Status</h2>
 
@@ -38,9 +37,7 @@
 			<input class="btn btn-success" type="submit" name="btn" value="Save" />
 		</form>
 	</div>
-	<div class="card-footer small text-muted">
-		* required fields
-	</div>
+
 	<br>
 	<hr>
 	<br>
@@ -61,18 +58,19 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td width="180" class="text-center">
-			            <a href="<?php echo site_url('') ?>"
-			             class="btn btn-small"><i class="fas fa-eye"></i></a>
-			            <a href="<?php echo site_url('') ?>"
-			             class="btn btn-small"><i class="fas fa-edit"></i></a>
-			            <a onclick="deleteConfirm('') ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
-			          </td>
-                    
-                  </tr>
+                	<?php foreach($status as $row):?>
+	                  <tr>
+	                    <td><?php echo $row->name?></td>
+	                    <td><?php echo $row->description?></td>
+	                    <td width="180" class="text-center">
+				            <a href="<?php echo site_url('') ?>"
+				             class="btn btn-small"><i class="fas fa-eye"></i></a>
+				            <a href="<?php echo site_url('admin/status/edit/'.$row->status_id) ?>"
+				             class="btn btn-small"><i class="fas fa-edit"></i></a>
+				            <a onclick="deleteConfirm('') ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
+				          </td>
+	                  </tr>
+              		<?php endforeach;?>
                 </tbody>
               </table>
             </div>

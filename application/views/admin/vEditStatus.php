@@ -1,7 +1,7 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
 
 <!-- Judul Halaman -->
-<h2 class="text-center">Edit Category</h2>
+<h2 class="text-center">Edit Status</h2>
 
 	<?php if ($this->session->flashdata('success')): ?>
 	<div class="alert alert-success" role="alert">
@@ -11,14 +11,9 @@
 
 	<div class="card-body">
 		<!-- Form Input Data -->
-		<form action="<?php base_url('admin/category/edit') ?>" method="post" >
+		<form action="<?php base_url('admin/status/edit') ?>" method="post" >
 
-			<input type="hidden" name="id" value="<?php echo $edit->category_id?>">
-
-			<div class="form-group">
-				<label for="code">Code*</label>
-				<input class="form-control" type="text" name="code" value="<?php echo $edit->code?>" />
-			</div>
+			<input type="hidden" name="id" value="<?php echo $edit->status_id?>">
 
 			<div class="form-group">
 				<label for="name">Name*</label>

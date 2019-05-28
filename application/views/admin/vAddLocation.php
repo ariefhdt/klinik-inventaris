@@ -1,6 +1,5 @@
 <?php $this->load->view("admin/_partials/atas.php") ?>
 
-
 <!-- Judul Halaman -->
 <h2 class="text-center">Add Location</h2>
 
@@ -39,9 +38,6 @@
 		</form>
 
 	</div>
-	<div class="card-footer small text-muted">
-		* required fields
-	</div>
 
 	<br>
 	<hr>
@@ -64,19 +60,20 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>System Architect</td>
-                    <td width="180" class="text-center">
-			            <a href="<?php echo site_url('') ?>"
-			             class="btn btn-small"><i class="fas fa-eye"></i></a>
-			            <a href="<?php echo site_url('') ?>"
-			             class="btn btn-small"><i class="fas fa-edit"></i></a>
-			            <a onclick="deleteConfirm('') ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
-			          </td>
-                    
-                  </tr>
+                	<?php foreach($locations as $row):?>
+	                  <tr>
+	                    <td><?php echo $row->code?></td>
+	                    <td><?php echo $row->name?></td>
+	                    <td><?php echo $row->detail?></td>
+	                    <td width="180" class="text-center">
+				            <a href="<?php echo site_url('') ?>"
+				             class="btn btn-small"><i class="fas fa-eye"></i></a>
+				            <a href="<?php echo site_url('admin/location/edit/'.$row->location_id) ?>"
+				             class="btn btn-small"><i class="fas fa-edit"></i></a>
+				            <a onclick="deleteConfirm('<?php echo site_url('admin/location/delete/'.$row->location_id)?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
+				          </td>
+	                  </tr>
+              		<?php endforeach; ?>
                 </tbody>
               </table>
             </div>

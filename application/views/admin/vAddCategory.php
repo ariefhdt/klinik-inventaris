@@ -13,24 +13,24 @@
 
 	<div class="card-body">
 		<!-- Form Input Data -->
-	<form action="<?php base_url('admin/category/add') ?>" method="post" enctype="multipart/form-data" >
+		<form action="<?php base_url('admin/category/add') ?>" method="post" enctype="multipart/form-data" >
 
-		<div class="form-group">
-			<label for="code">Code*</label>
-			<input class="form-control" type="text" name="code" placeholder="blank" />
-		</div>
+			<div class="form-group">
+				<label for="code">Code*</label>
+				<input class="form-control" type="text" name="code" placeholder="blank" />
+			</div>
 
-		<div class="form-group">
-			<label for="name">Name*</label>
-			<input class="form-control" type="text" name="name" placeholder="blank"/>
-		</div>
-
-		<div class="form-group">
-			<label for="description">Description*</label>
-			<input class="form-control" type="text" name="description" placeholder="blank"/>
-		</div>
-		<input class="btn btn-success" type="submit" name="btn" value="Save" />
-	</form>
+			<div class="form-group">
+				<label for="name">Name*</label>
+				<input class="form-control" type="text" name="name" placeholder="blank"/>
+			</div>
+ 
+			<div class="form-group">
+				<label for="description">Description*</label>
+				<input class="form-control" type="text" name="description" placeholder="blank"/>
+			</div>
+			<input class="btn btn-success" type="submit" name="btn" value="Save" />
+		</form>
 
 	</div>
 	<!-- <div class="card-footer small text-muted">
