@@ -103,7 +103,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <a class="dropdown-item " href="#">Add Inventory</a>
-          <a class="dropdown-item" href="#">All Data</a>
+          <a class="dropdown-item" href="<?php echo site_url("admin/inventory")?>">All Data</a>
           <a class="dropdown-item" href="#">By Category</a>
           <a class="dropdown-item" href="#">By Location</a>
         </div>

@@ -6,7 +6,7 @@ class Mstatus extends CI_Model
 {
 	
 	private $status_id;
-	private $name;
+	private $status_name;
 	private $description;
 
 	function getAll()
@@ -22,7 +22,7 @@ class Mstatus extends CI_Model
 	function save()
 	{
 		$post = $this->input->post();
-		$this->name = $post["name"];
+		$this->status_name = $post["name"];
 		$this->description = $post["description"];
 		$this->db->insert("tb_status", $this);
 	}
@@ -31,7 +31,7 @@ class Mstatus extends CI_Model
 	{
 		$post = $this->input->post();
 		$this->status_id = $post["id"];
-		$this->name = $post["name"];
+		$this->status_name = $post["name"];
 		$this->description = $post["description"];
 		$this->db->update("tb_status", $this, array('location_id' => $post["id"])); //jangan lupa input hidden
 	}

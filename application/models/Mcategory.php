@@ -6,14 +6,14 @@ class Mcategory extends CI_Model
 {
 	private $category_id;
 	public $code;
-	public $name;
+	public $category_name;
 	public $description;
 	
 	function save()
 	{
 		$post = $this->input->post();
 		$this->code = $post["code"];
-		$this->name = $post["name"];
+		$this->category_name = $post["name"];
 		$this->description = $post["description"];
 		$this->db->insert("tb_categories", $this);
 	}
@@ -33,7 +33,7 @@ class Mcategory extends CI_Model
 		$post = $this->input->post();
 		$this->category_id = $post["id"];
 		$this->code = $post["code"];
-		$this->name = $post["name"];
+		$this->category_name = $post["name"];
 		$this->description = $post["description"];
 		$this->db->update("tb_categories", $this, array('category_id' =>$post['id']));
 	}

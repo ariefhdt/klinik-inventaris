@@ -5,7 +5,7 @@
 class Mlocation extends CI_Model
 {
 	private $code;
-	private $name;
+	private $location_name;
 	private $detail;
 
 	public function getAll()
@@ -22,7 +22,7 @@ class Mlocation extends CI_Model
 	{
 		$post = $this->input->post();
 		$this->code = $post["code"];
-		$this->name = $post["name"];
+		$this->location_name = $post["name"];
 		$this->detail = $post["detail"];
 		$this->db->insert("tb_locations", $this);
 
@@ -32,7 +32,7 @@ class Mlocation extends CI_Model
 	{
 		$post = $this->input->post();
 		$this->code = $post["code"];
-		$this->name = $post["name"];
+		$this->location_name = $post["name"];
 		$this->detail = $post["detail"];
 		$this->db->update("tb_locations", $this, array('location_id' => $post['id'])); //jangan lupa tambahkan input hidden untuk id
 	}

@@ -12,14 +12,6 @@
 	<div class="card-body">
 		<!-- Form Input Data -->
 		<form action="<?php base_url('admin/location/add') ?>" method="post" >
-			<div class="form-group">
-				<label for="status">Status Code*</label>
-				<input class="form-control <?php echo form_error('status') ? 'is-invalid':'' ?>"
-				 type="text" name="status" placeholder="Ex: 3001" />
-				<div class="invalid-feedback">
-					<?php echo form_error('status') ?>
-				</div>
-			</div>
 
 			<div class="form-group">
 				<label for="name">Name*</label>
@@ -63,8 +55,6 @@
 	                    <td><?php echo $row->name?></td>
 	                    <td><?php echo $row->description?></td>
 	                    <td width="180" class="text-center">
-				            <a href="<?php echo site_url('') ?>"
-				             class="btn btn-small"><i class="fas fa-eye"></i></a>
 				            <a href="<?php echo site_url('admin/status/edit/'.$row->status_id) ?>"
 				             class="btn btn-small"><i class="fas fa-edit"></i></a>
 				            <a onclick="deleteConfirm('') ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
