@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access alowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * 
  */
@@ -8,13 +8,18 @@ class Inventory extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model("Minventory");
-		$this->load->library('form_validation');
+		$this->load->model('Minventory');
 	}
 
-	function index()
+	public function index()
 	{
-		$data["inventory"] = $this->Minventory->getAll();
-		$this->load->view("admin/vListInventory", $data);
+		$data["inventories"] = $this->Minventory->getAll();
+		$this->load->view("admin/inventory/vListInventory", $data);
+	}
+
+	public function add()
+	{
+
+		$this->load->view("admin/inventory/vAddInventory");
 	}
 }

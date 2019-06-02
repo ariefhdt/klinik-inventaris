@@ -5,9 +5,6 @@
 class Mstatus extends CI_Model
 {
 	
-	private $status_id;
-	private $status_name;
-	private $description;
 
 	function getAll()
 	{
@@ -19,21 +16,18 @@ class Mstatus extends CI_Model
 		return $this->db->get_where("tb_status", ["status_id" => $id])->row();
 	}
 
-	function save()
+	public function save($post)
 	{
-		$post = $this->input->post();
-		$this->status_name = $post["name"];
-		$this->description = $post["description"];
-		$this->db->insert("tb_status", $this);
-	}
+		$status_name = $this->db->escape($post["status_name"]);
+		$description = $this->db->escape($post["description"]);
 
-	function update()
-	{
-		$post = $this->input->post();
-		$this->status_id = $post["id"];
-		$this->status_name = $post["name"];
-		$this->description = $post["description"];
-		$this->db->update("tb_status", $this, array('location_id' => $post["id"])); //jangan lupa input hidden
+		$sql = $this->db->query("INSERT INTO tb_status VALUES(NULL, $status_name, $description)");
+
+		if ($sql) {
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	function delete($id)

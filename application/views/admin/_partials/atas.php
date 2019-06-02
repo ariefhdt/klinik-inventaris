@@ -102,7 +102,7 @@
           <span>Inventaris</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item " href="#">Add Inventory</a>
+          <a class="dropdown-item " href="<?php echo site_url("admin/inventory/add")?>">Add Inventory</a>
           <a class="dropdown-item" href="<?php echo site_url("admin/inventory")?>">All Data</a>
           <a class="dropdown-item" href="#">By Category</a>
           <a class="dropdown-item" href="#">By Location</a>
@@ -115,8 +115,8 @@
           <span>Maintanance</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item " href="<?php echo site_url("admin/category")?>">Add Category</a>
-          <a class="dropdown-item" href="<?php echo site_url("admin/location")?>">Add Location</a>
+          <a class="dropdown-item " href="<?php echo site_url("admin/categories")?>">Add Category</a>
+          <a class="dropdown-item" href="<?php echo site_url("admin/locations")?>">Add Location</a>
           <a class="dropdown-item" href="<?php echo site_url("admin/status")?>">Add Status</a>
         </div>
       </li>

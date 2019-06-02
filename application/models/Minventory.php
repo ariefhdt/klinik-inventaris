@@ -4,20 +4,6 @@
  */
 class Minventory extends CI_Model
 {
-	
-	private $inventory_id;
-	private $code;
-	private $category_id;
-	private $location_id;
-	private $brand;
-	private $model;
-	private $serial_number;
-	private $status_id;
-	private $color;
-	private $price;
-	private $date_purchase;
-	private $photo;
-	private $description;
 
 	function getAll()
 	{
