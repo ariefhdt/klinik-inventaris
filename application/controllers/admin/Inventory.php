@@ -19,7 +19,15 @@ class Inventory extends CI_Controller
 
 	public function add()
 	{
-
-		$this->load->view("admin/inventory/vAddInventory");
+		if (isset($_POST['btn_add_inventory'])) {
+			$this->Minventory->save($_POST);
+			redirect("admin/inventory");
+		}
+		$data["categories"] = $this->Minventory->dd_category();
+		$data["locations"] = $this->Minventory->dd_location();
+		$data["statuses"] = $this->Minventory->dd_status();
+		$this->load->view("admin/inventory/vAddInventory", $data);
 	}
+
+
 }
