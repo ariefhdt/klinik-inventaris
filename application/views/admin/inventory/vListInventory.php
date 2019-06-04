@@ -31,9 +31,9 @@
 	                    <td width="180" class="text-center">
 				            <a href="<?php echo site_url('') ?>"
 				             class="btn btn-small"><i class="fas fa-eye"></i></a>
-				            <a href="<?php echo site_url('admin/location/edit/'.$row->location_id) ?>"
+				            <a href="<?php echo site_url('admin/inventory/edit/'.$row->inventory_id) ?>"
 				             class="btn btn-small"><i class="fas fa-edit"></i></a>
-				            <a onclick="deleteConfirm('<?php echo site_url('admin/location/delete/'.$row->location_id)?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
+				            <a onclick="deleteConfirm('<?php echo site_url('admin/inventory/delete/'.$row->inventory_id)?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
 				          </td>
 	                  </tr>
               		<?php endforeach; ?>

@@ -28,8 +28,21 @@ class Mcategories extends CI_Model
 		}
 	}
 
-	
-	//$sql = $this->db->query("UPDATE tb_karyawan SET name = $nama, alamat = $alamat, email = $email WHERE id = ".intval($id));
+	public function update($post, $id){
+		//pastikan nama index post yang dipanggil sama seperti di form input
+		$code = $this->db->escape($post["code"]);
+		$category_name = $this->db->escape($post["category_name"]);
+		$description = $this->db->escape($post["description"]);
+
+		$sql = $this->db->query("UPDATE tb_categories SET code = $code, category_name = $category_name, description = $description WHERE category_id = ".intval($id));
+		
+		return true;
+	}
+
+	public function delete($id)
+	{
+		return $this->db->delete("tb_categories", array("category_id" => $id));
+	}
 
 
 }

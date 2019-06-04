@@ -26,4 +26,21 @@ class Locations extends CI_Controller
 		$this->load->view("admin/location/vAddLocation");
 	}
 
+	public function edit($id) 
+	{
+		if (isset($_POST['btn_edit_location'])) {
+			$this->Mlocations->update($_POST, $id);
+			redirect("admin/locations");
+		}
+		$data["edit"] = $this->Mlocations->getById($id);
+		$this->load->view("admin/location/vEditLocation", $data);
+	}
+
+	public function delete($id)
+	{
+		if ($this->Mlocations->delete($id)) {
+			redirect("admin/locations");
+		}
+	}
+
 }

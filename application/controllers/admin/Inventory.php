@@ -29,5 +29,25 @@ class Inventory extends CI_Controller
 		$this->load->view("admin/inventory/vAddInventory", $data);
 	}
 
+	public function edit($id)
+	{
+		if (isset($_POST['btn_edit_inventory'])) {
+			$this->Minventory->update($_POST, $id);
+			redirect("admin/inventory");
+		}
+		$data["inventory"] = $this->Minventory->getById($id);
+		$data["category"] = $this->Minventory->dd_category();
+		$data["location"] = $this->Minventory->dd_location();
+		$data["status"] = $this->Minventory->dd_status();
+		$this->load->view("admin/inventory/vEditInventory", $data);
+	}
+
+	public function delete($id)
+	{
+		if ($this->Minventory->delete($id)) {
+			redirect("admin/inventory");
+		}
+	}
+
 
 }

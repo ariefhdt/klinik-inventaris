@@ -22,4 +22,25 @@ class Mlocations extends CI_Model
 			return false;
 		}
 	}
+
+	public function getById($id)
+	{
+		return $this->db->get_where("tb_locations", ["location_id" => $id])->row();
+	}
+
+	public function update($post, $id)
+	{
+		$code = $this->db->escape($post["code"]);
+		$location_name = $this->db->escape($post["location_name"]);
+		$detail = $this->db->escape($post["detail"]);
+
+		$this->db->query("UPDATE tb_locations SET code = $code, location_name = $location_name, detail = $detail WHERE location_id =".intval($id));
+
+		return true;
+	}
+
+	public function delete($id)
+	{
+		return  $this->db->delete("tb_locations", array("location_id" => $id));
+	}
 }

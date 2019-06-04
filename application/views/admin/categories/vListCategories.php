@@ -24,9 +24,9 @@
                     <td><?php echo $row->category_name?></td>
                     <td><?php echo $row->description?></td>
                     <td width="180" class="text-center">
-                      <a href=""
+                      <a href="<?php echo site_url('admin/categories/edit/'.$row->category_id)?>"
                        class="btn btn-small"><i class="fas fa-edit"></i></a>
-                      <a onclick="deleteConfirm('')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
+                      <a onclick="deleteConfirm('<?php echo site_url('admin/categories/delete/'.$row->category_id)?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                   <?php endforeach;?>

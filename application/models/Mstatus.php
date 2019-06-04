@@ -6,12 +6,12 @@ class Mstatus extends CI_Model
 {
 	
 
-	function getAll()
+	public function getAll()
 	{
 		return $this->db->get("tb_status")->result();
 	}
 
-	function getById($id)
+	public function getById($id)
 	{
 		return $this->db->get_where("tb_status", ["status_id" => $id])->row();
 	}
@@ -30,8 +30,18 @@ class Mstatus extends CI_Model
 		}
 	}
 
-	function delete($id)
+	public function update($post, $id)
 	{
-		return $this->db->delete("tb_status", array('location_id' => $id));
+		$status_name = $this->db->escape($post["status_name"]);
+		$description = $this->db->escape($post["description"]);
+
+		$this->db->query("UPDATE tb_status SET status_name = $status_name, description = $description WHERE status_id =".intval($id));
+
+		return true;
+	}
+
+	public function delete($id)
+	{
+		return $this->db->delete("tb_status", array('status_id' => $id));
 	}
 }

@@ -24,4 +24,21 @@ class Categories extends CI_Controller
 		}
 		$this->load->view("admin/categories/vAddCategories");
 	}
+
+	public function edit($id)
+	{
+		if (isset($_POST['btn_edit_category'])) {
+			$this->Mcategories->update($_POST, $id);
+			redirect("admin/categories");
+		}
+		$data["edit"] = $this->Mcategories->getById($id);
+		$this->load->view("admin/categories/vEditCategories", $data);
+	}
+
+	public function delete($id)
+	{
+		if ($this->Mcategories->delete($id)) {
+			redirect("admin/categories");
+		}
+	}
 }

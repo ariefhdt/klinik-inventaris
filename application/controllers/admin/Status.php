@@ -25,4 +25,22 @@ class Status extends CI_Controller
 		}
 		$this->load->view("admin/status/vAddStatus");
 	}
+
+	public function edit($id)
+	{
+		if (isset($_POST['btn_edit_status'])) {
+			$this->Mstatus->update($_POST, $id);
+			redirect("admin/status");
+		}
+
+		$data["edit"] = $this->Mstatus->getById($id);
+		$this->load->view("admin/status/vEditStatus", $data);
+	}
+
+	public function delete($id)
+	{
+		if ($this->Mstatus->delete($id)) {
+			redirect("admin/status");
+		}
+	}
 }

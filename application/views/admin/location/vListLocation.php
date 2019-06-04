@@ -24,9 +24,9 @@
                     <td><?php echo $row->location_name?></td>
                     <td><?php echo $row->detail?></td>
                     <td width="150" class="text-center">
-                      <a href=""
+                      <a href="<?php echo site_url('admin/locations/edit/'.$row->location_id)?>"
                        class="btn btn-small"><i class="fas fa-edit"></i></a>
-                      <a onclick="deleteConfirm('')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
+                      <a onclick="deleteConfirm('<?php echo site_url('admin/locations/delete/'.$row->location_id)?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                   <?php endforeach;?>
