@@ -69,6 +69,7 @@
 		<div class="form-group">
 			<label>Photo</label>
 			<input class="form-control" type="file" name="photo" value="">
+			<input type="hidden" name="old_image" value="<?php echo $inventory->photo?>" >
 		</div>
 
 		<div class="form-group">
