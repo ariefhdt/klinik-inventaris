@@ -1,6 +1,6 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
-	<h3 class="text-center">Add Category</h3>
-	<form method="post" class="form-horizontal">
+	<h3 class="judulHalaman">Add Category</h3>
+	<form method="post" class="form-horizontal formm">
 		<div class="form-group">
 			<label>Code</label>
 			<input class="form-control" type="text" placeholder="ex : 1001" name="code" value="">

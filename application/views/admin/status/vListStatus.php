@@ -1,5 +1,5 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
-<h3 class="text-center">Location List</h3>
+<h3 class="judulHalaman">Location List</h3>
 <a href="status/add" class="btn btn-primary">Add Status</a>
 <hr>
 	<div class="card mb-3">

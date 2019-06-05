@@ -1,7 +1,7 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
 
-<h3 class="text-center">Edit Category</h3>
-<form method="post" class="form-horizontal">
+<h3 class="judulHalaman">Edit Category</h3>
+<form method="post" class="form-horizontal formm">
 
 	<input type="hidden" name="id" value="<?php echo $edit->category_id?>">
 	<div class="form-group">

@@ -1,7 +1,7 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
 
-	<h3 class="text-center">Edit Inventory</h3>
-	<form method="post" class="form-horizontal" enctype="multipart/form-data">
+	<h3 class="judulHalaman">Edit Inventory</h3>
+	<form method="post" class="form-horizontal formm" enctype="multipart/form-data">
 		<div class="form-group">
 			<label>Code</label>
 			<input class="form-control" type="text" placeholder="ex : 1001" name="code" value="<?php echo $inventory->code?>">

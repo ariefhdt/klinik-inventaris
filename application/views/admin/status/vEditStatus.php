@@ -1,6 +1,6 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
-	<h3 class="text-center">Edit Status</h3>
-	<form method="post" class="form-horizontal">
+	<h3 class="judulHalaman">Edit Status</h3>
+	<form method="post" class="form-horizontal formm">
 		<div class="form-group">
 			<label>Status Name</label>
 			<input class="form-control" type="text" name="status_name" value="<?php echo $edit->status_name?>" placeholder="Status name">
