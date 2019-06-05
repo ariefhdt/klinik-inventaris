@@ -17,6 +17,12 @@ class Inventory extends CI_Controller
 		$this->load->view("admin/inventory/vListInventory", $data);
 	}
 
+	public function lihat($id)
+	{
+		$data["lihat"] = $this->Minventory->getById($id);
+		$this->load->view("admin/inventory/vLihatInventory", $data);
+	}
+
 	public function add()
 	{
 		if (isset($_POST['btn_add_inventory'])) {

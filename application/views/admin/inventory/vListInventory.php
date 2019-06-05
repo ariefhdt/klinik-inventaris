@@ -1,5 +1,5 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
-<h3 class="text-center">Inventory List</h3>
+<h3 class="judulHalaman">Inventory List</h3>
 <a href="inventory/add" class="btn btn-primary">Add Inventory</a>
 <hr>
 <!-- DataTables Example -->
@@ -29,7 +29,7 @@
 	                    <td><?php echo $row->brand?></td>
 	                    <td><?php echo $row->status_name?></td>
 	                    <td width="180" class="text-center">
-				            <a href="<?php echo site_url('') ?>"
+				            <a href="<?php echo site_url('admin/inventory/lihat/'.$row->inventory_id) ?>"
 				             class="btn btn-small"><i class="fas fa-eye"></i></a>
 				            <a href="<?php echo site_url('admin/inventory/edit/'.$row->inventory_id) ?>"
 				             class="btn btn-small"><i class="fas fa-edit"></i></a>

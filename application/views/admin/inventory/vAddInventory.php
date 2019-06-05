@@ -4,12 +4,12 @@
 	<form method="post" class="form-horizontal" enctype="multipart/form-data">
 		<div class="form-group">
 			<label>Code</label>
-			<input class="form-control" type="text" placeholder="ex : 1001" name="code" value="">
+			<input class="form-control strong" type="text" placeholder="ex : 4001" name="code" value="">
 		</div>
 
 		<div class="form-group">
 			<label>Category</label>
-			<select class="form-control" name="category_id">
+			<select class="form-control strong" name="category_id">
 				<?php
 					echo '<option value="">--choose category--</option>';
 					foreach ($categories as $a) {
@@ -21,7 +21,7 @@
 
 		<div class="form-group">
 			<label>Location</label>
-			<select class="form-control" name="location_id">
+			<select class="form-control strong" name="location_id">
 				<?php
 					echo '<option value="">--choose location--</option>';
 					foreach ($locations as $b) {
@@ -33,22 +33,22 @@
 
 		<div class="form-group">
 			<label>Brand</label>
-			<input class="form-control" type="text" name="brand" placeholder="Insert brand name" value="">
+			<input class="form-control strong" type="text" name="brand" placeholder="Insert brand name" value="">
 		</div>
 
 		<div class="form-group">
 			<label>Model</label>
-			<input class="form-control" type="text" name="model" placeholder="Insert model product" value="">
+			<input class="form-control strong" type="text" name="model" placeholder="Insert model product" value="">
 		</div>
 
 		<div class="form-group">
 			<label>Serial Number</label>
-			<input class="form-control" type="text" name="serial_number" placeholder="Insert serial number" value="">
+			<input class="form-control strong" type="text" name="serial_number" placeholder="Insert serial number" value="">
 		</div>
 
 		<div class="form-group">
 			<label>Status</label>
-			<select class="form-control" name="status_id">
+			<select class="form-control strong" name="status_id">
 				<?php
 					echo '<option value="">--choose status--</option>';
 					foreach ($statuses as $c) {
@@ -60,17 +60,17 @@
 
 		<div class="form-group">
 			<label>Color</label>
-			<input class="form-control" type="text" name="color" placeholder="Insert color product" value="">
+			<input class="form-control strong" type="text" name="color" placeholder="Insert color product" value="">
 		</div>
 
 		<div class="form-group">
 			<label>Product Price</label>
-			<input class="form-control" type="number" name="price" placeholder="Insert product price" value="">
+			<input class="form-control strong" type="number" name="price" placeholder="Insert product price" value="">
 		</div>
 
 		<div class="form-group">
 			<label>Date Purchase</label>
-			<input class="form-control" type="date" name="date_purchase" value="">
+			<input class="form-control strong" type="date" name="date_purchase" value="">
 		</div>
 
 		<div class="form-group">
@@ -80,7 +80,7 @@
 
 		<div class="form-group">
 			<label>Description</label>
-			<textarea class="form-control" placeholder="description" name="description"></textarea>
+			<textarea class="form-control strong" placeholder="description" name="description"></textarea>
 		</div>
 		<button name="btn_add_inventory" class="btn btn-primary">Simpan</button>
 

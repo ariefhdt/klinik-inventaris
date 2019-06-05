@@ -74,6 +74,17 @@ body {
   outline: 0 !important;
 }
 
+.judulHalaman{
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.line-height{
+  line-height: 1.5;
+}
+
 hr {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
@@ -2590,6 +2601,11 @@ textarea.form-control {
     -webkit-transition: none;
     transition: none;
   }
+}
+
+.strong{
+  font-weight: bold;
+  
 }
 
 .btn:hover {
