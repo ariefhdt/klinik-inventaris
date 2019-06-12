@@ -27,6 +27,12 @@ class Minventory extends CI_Model
 		//return $this->db->get_where("tb_inventory", ["inventory_id" => $id])->row();
 	}
 
+	public function getLastCode()
+	{
+		$sql = $this->db->query("SELECT code FROM tb_inventory ORDER BY inventory_id DESC LIMIT 1");
+		return $sql->row(); 
+	}
+
 	public function dd_location()
 	{
 		return $this->db->get("tb_locations")->result();
@@ -102,7 +108,7 @@ class Minventory extends CI_Model
 
 		$description = $this->db->escape($post["description"]);
 
-		$sql = $this->db->query("UPDATE tb_inventory SET code = $code, category_id = $category_id, location_id = $location_id, brand = $brand, model = $model, serial_number = $serial_number, status_id = $status_id, color = $color, price = $price, date_purchase = $date_purchase, photo = '$photo', description = $description WHERE inventory_id = ".intval($id));
+		$sql = $this->db->query("UPDATE tb_inventory SET code = $code, category_id = $category_id, location_id = $location_id, brand = $brand, model = $model, serial_number = $serial_number, status_id = $status_id, color = $color, price = $price, date_purchase = $date_purchase, photo = $photo, description = $description WHERE inventory_id = ".intval($id));
 
 		return true;
 	}

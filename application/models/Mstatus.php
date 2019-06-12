@@ -16,6 +16,12 @@ class Mstatus extends CI_Model
 		return $this->db->get_where("tb_status", ["status_id" => $id])->row();
 	}
 
+	public function getLastCode()
+	{
+		$sql = $this->db->query("SELECT code FROM tb_status ORDER BY status_id DESC LIMIT 1");
+		return $sql->row();
+	}
+
 	public function save($post)
 	{
 		$status_name = $this->db->escape($post["status_name"]);

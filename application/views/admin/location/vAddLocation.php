@@ -1,9 +1,15 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
 	<h3 class="judulHalaman">Add Location</h3>
+
+	<?php
+		$oldCode = intval($lastCode->code);
+		$newCode = $oldCode + 0001;
+	?>
+
 	<form method="post" class="form-horizontal formm">
 		<div class="form-group">
 			<label>Code</label>
-			<input class="form-control" type="text" placeholder="Ex : 2001" name="code" value="">
+			<input class="form-control" type="text" name="code" value="<?php echo intval($newCode)?>">
 		</div>
 
 		<div class="form-group">

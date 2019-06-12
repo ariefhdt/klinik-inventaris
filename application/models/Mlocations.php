@@ -9,6 +9,12 @@ class Mlocations extends CI_Model
 		return $this->db->get("tb_locations")->result();
 	}
 
+	public function getLastCode()
+	{
+		$sql = $this->db->query("SELECT code FROM tb_locations ORDER BY location_id DESC LIMIT 1");
+		return $sql->row();
+	}
+
 	public function save($post)
 	{
 		$code = $this->db->escape($post["code"]);

@@ -13,6 +13,12 @@ class Mcategories extends CI_Model
 	{
 		return $this->db->get_where("tb_categories", ["category_id" => $id])->row();
 	}
+
+	public function getLastCode()
+	{
+		$sql = $this->db->query("SELECT code FROM tb_categories ORDER BY category_id DESC LIMIT 1");
+		return $sql->row();
+	}
 	
 	public function simpan($post){
 		//pastikan nama index post yang dipanggil sama seperti di form input

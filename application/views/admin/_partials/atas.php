@@ -28,7 +28,7 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-blue-1 static-top">
 
-    <a class="navbar-brand mr-1" href="index.html"><?php echo SITE_NAME?></a>
+    <a class="navbar-brand mr-1" href="<?php echo site_url("admin/home")?>"><?php echo SITE_NAME?></a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -63,6 +63,34 @@
         </a>
       </li>
 
+      <li class="nav-item <?php echo $this->uri->segment(2)== 'inventory'? 'active': ''?>">
+        <a class="nav-link" href="<?php echo site_url("admin/inventory")?>">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Inventory</span>
+        </a>
+      </li>
+
+      <li class="nav-item <?php echo $this->uri->segment(2)== 'categories'? 'active': ''?>">
+        <a class="nav-link" href="<?php echo site_url("admin/categories")?>">
+          <i class="fas fa-fw fa-list"></i>
+          <span>Category</span>
+        </a>
+      </li>
+
+      <li class="nav-item <?php echo $this->uri->segment(2)== 'locations'? 'active': ''?>">
+        <a class="nav-link" href="<?php echo site_url("admin/locations")?>">
+          <i class="fas fa-fw fa-map-marked"></i>
+          <span>Location</span>
+        </a>
+      </li>
+
+      <li class="nav-item <?php echo $this->uri->segment(2)== 'status'? 'active': ''?>">
+        <a class="nav-link" href="<?php echo site_url("admin/status")?>">
+          <i class="fas fa-fw fa-memory"></i>
+          <span>Status</span>
+        </a>
+      </li>
+<!-- 
       <li class="nav-item dropdown <?php echo $this->uri->segment(2)== 'inventory'? 'active': ''?>">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
@@ -82,9 +110,9 @@
           <span>Maintanance</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item " href="<?php echo site_url("admin/categories")?>">Add Category</a>
-          <a class="dropdown-item" href="<?php echo site_url("admin/locations")?>">Add Location</a>
-          <a class="dropdown-item" href="<?php echo site_url("admin/status")?>">Add Status</a>
+          <a class="dropdown-item " href="<?php echo site_url("admin/categories")?>">Categories</a>
+          <a class="dropdown-item" href="<?php echo site_url("admin/locations")?>">Locations</a>
+          <a class="dropdown-item" href="<?php echo site_url("admin/status")?>">Status</a>
         </div>
       </li>
       <li class="nav-item">
@@ -92,7 +120,7 @@
           <i class="fas fa-fw fa-user"></i>
           <span>Users</span></a>
       </li>
-    </ul>
+ -->    </ul>
 
     <div id="content-wrapper">
         <div class="container-fluid">

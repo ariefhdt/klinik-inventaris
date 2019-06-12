@@ -23,7 +23,8 @@ class Locations extends CI_Controller
 			$this->Mlocations->save($_POST);
 			redirect("admin/locations");
 		}
-		$this->load->view("admin/location/vAddLocation");
+		$data["lastCode"] = $this->Mlocations->getLastCode();
+		$this->load->view("admin/location/vAddLocation", $data);
 	}
 
 	public function edit($id) 

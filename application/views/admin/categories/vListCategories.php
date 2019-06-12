@@ -8,7 +8,7 @@
             Category Lists</div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <table class="table table-bordered zebra-table" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>Code</th>
@@ -22,7 +22,7 @@
                   <tr>
                     <td><?php echo $row->code?></td>
                     <td><?php echo $row->category_name?></td>
-                    <td><?php echo $row->description?></td>
+                    <td><?php echo substr($row->description, 0,50)?></td>
                     <td width="180" class="text-center">
                       <a href="<?php echo site_url('admin/categories/edit/'.$row->category_id)?>"
                        class="btn btn-small"><i class="fas fa-edit"></i></a>

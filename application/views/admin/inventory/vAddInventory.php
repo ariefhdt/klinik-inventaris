@@ -1,10 +1,15 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
+	
+	<?php
+	$oldCode = intval($lastCode->code);
+	$newCode = $oldCode + 0001;
+	?>
 
 	<h3 class="judulHalaman">Add Inventory</h3>
 	<form method="post" class="form-horizontal formm" enctype="multipart/form-data">
 		<div class="form-group">
 			<label>Code</label>
-			<input class="form-control" type="text" placeholder="ex : 4001" name="code" value="">
+			<input class="form-control" type="text" placeholder="ex : 4001" name="code" value="<?php echo $newCode?>">
 		</div>
 
 		<div class="form-group">

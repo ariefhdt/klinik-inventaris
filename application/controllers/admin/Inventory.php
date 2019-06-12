@@ -32,6 +32,7 @@ class Inventory extends CI_Controller
 		$data["categories"] = $this->Minventory->dd_category();
 		$data["locations"] = $this->Minventory->dd_location();
 		$data["statuses"] = $this->Minventory->dd_status();
+		$data["lastCode"] = $this->Minventory->getLastCode();
 		$this->load->view("admin/inventory/vAddInventory", $data);
 	}
 

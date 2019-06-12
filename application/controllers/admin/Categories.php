@@ -22,7 +22,8 @@ class Categories extends CI_Controller
 			$this->Mcategories->simpan($_POST);
 			redirect("admin/categories");
 		}
-		$this->load->view("admin/categories/vAddCategories");
+		$data["lastCode"] = $this->Mcategories->getLastCode();
+		$this->load->view("admin/categories/vAddCategories", $data);
 	}
 
 	public function edit($id)
@@ -34,7 +35,7 @@ class Categories extends CI_Controller
 		$data["edit"] = $this->Mcategories->getById($id);
 		$this->load->view("admin/categories/vEditCategories", $data);
 	}
-
+ 
 	public function delete($id)
 	{
 		if ($this->Mcategories->delete($id)) {
