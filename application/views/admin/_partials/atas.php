@@ -22,6 +22,7 @@
 
   <link href="<?php echo base_url('css/style.css')?>" rel="stylesheet">
 
+
 </head>
 
 <body id="page-top">
@@ -88,6 +89,13 @@
         <a class="nav-link" href="<?php echo site_url("admin/status")?>">
           <i class="fas fa-fw fa-memory"></i>
           <span>Status</span>
+        </a>
+      </li>
+
+      <li class="nav-item <?php echo $this->uri->segment(2)== 'report'? 'active': ''?>">
+        <a class="nav-link" href="<?php echo site_url("admin/report")?>">
+          <i class="fas fa-fw fa-memory"></i>
+          <span>Report</span>
         </a>
       </li>
 <!-- 
