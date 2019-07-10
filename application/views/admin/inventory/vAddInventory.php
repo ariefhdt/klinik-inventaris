@@ -1,8 +1,14 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
 	
 	<?php
-	$oldCode = intval($lastCode->code);
-	$newCode = $oldCode + 0001;
+	if (isset($lastCode->code)) {
+		$oldCode = intval($lastCode->code);
+		$newCode = $oldCode + 0001;
+	}else
+	{
+		$newCode = 4001;
+	}
+	
 	?>
 
 	<h3 class="judulHalaman">Add Inventory</h3>

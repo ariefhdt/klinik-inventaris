@@ -4,7 +4,7 @@
  */
 class Report extends CI_Controller
 {
-	
+
 	function __construct()
 	{
 		parent::__construct();
@@ -14,36 +14,23 @@ class Report extends CI_Controller
 
 	public function index()
 	{
-		$data["categories"] = $this->Minventory->dd_category();
-		$data["locations"] = $this->Minventory->dd_location();
-		$data["statuses"] = $this->Minventory->dd_status();
-		$this->load->view("admin/laporan/vLaporan", $data);
-	}
-
-	public function getRecords()
-	{
-		if (isset($_POST['btn_show_report'])) {
-			$a["w"] = $this->db->escape($post["category_id"]);
-			$this->load->view("admin/laporan/vResultLaporan", $a);
+		if (isset($_POST['btn_ctg_report'])) {
+			$category_id = $this->input->post("category_id");
+			$status_id = $this->input->post("status_id");
+			redirect("admin/report/showBy/".$category_id."/".$status_id);
 		}
-	}
-
-	public function categoryReport()
-	{
 		$data["categories"] = $this->Minventory->dd_category();
-		$this->load->view("admin/laporan/vCategoryReport", $data);
-	}
-
-	public function LocationReport()
-	{
-		$data["locations"] = $this->Minventory->dd_location();
-		$this->load->view("admin/laporan/vLocationReport", $data);
-	}
-
-	public function StatusReport()
-	{
 		$data["statuses"] = $this->Minventory->dd_status();
-		$this->load->view("admin/laporan/vStatusReport", $data);
+		$this->load->view("admin/laporan/vFormSearch", $data);
 	}
+
+
+	public function showBy($category_id=0, $status_id=0)
+	{
+		$data["tampil"] = $this->Mreport->showCategoryReport($category_id, $status_id);
+		$this->load->view("admin/laporan/vShowReport", $data);
+
+	}
+
 
 }

@@ -2,8 +2,15 @@
 	<h3 class="judulHalaman">Add Location</h3>
 
 	<?php
+	if (isset($lastCode->code)) 
+	{
 		$oldCode = intval($lastCode->code);
 		$newCode = $oldCode + 0001;
+	}else
+	{
+		$newCode = 2001;
+	}
+		
 	?>
 
 	<form method="post" class="form-horizontal formm">

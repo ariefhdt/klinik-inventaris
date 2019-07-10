@@ -1,8 +1,14 @@
 <?php $this->load->view("admin/_partials/atas.php")?>
 
 	<?php
+	if (isset($lastCode->code)) {
 		$oldCode = intval($lastCode->code);
 		$newCode = $oldCode + 0001;
+	}else
+	{
+		$newCode = 1001;
+	}
+		
 	?>
 
 	<h3 class="judulHalaman">Add Category</h3>
