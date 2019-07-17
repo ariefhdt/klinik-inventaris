@@ -5,7 +5,7 @@
 class Mreport extends CI_Model
 {
 
-	public function showCategoryReport($category_id, $status_id)
+	public function showCategoryReport($category_id, $status_id, $location_id)
 	{
 		$this->db->select('tb_inventory.*, tb_categories.category_name, tb_status.status_name, tb_locations.location_name');
 		$this->db->from('tb_inventory');
@@ -18,10 +18,13 @@ class Mreport extends CI_Model
 		if ($status_id != 0) {
 			$this->db->where('tb_inventory.status_id', $status_id);
 		}
+		if ($location_id !=0) {
+			$this->db->where('tb_inventory.location_id', $location_id);
+		}
 		return $this->db->get()->result();
 
 		// $sql = $this->db->query("SELECT * FROM tb_inventory WHERE category_id = ".intval($category_id));
 		// return $sql->result();
 	}
-
+ 
 }
