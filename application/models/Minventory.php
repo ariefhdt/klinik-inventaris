@@ -108,7 +108,7 @@ class Minventory extends CI_Model
 
 		$description = $this->db->escape($post["description"]);
 
-		$sql = $this->db->query("UPDATE tb_inventory SET code = $code, category_id = $category_id, location_id = $location_id, brand = $brand, model = $model, serial_number = $serial_number, status_id = $status_id, color = $color, price = $price, date_purchase = $date_purchase, photo = $photo, description = $description WHERE inventory_id = ".intval($id));
+		$sql = $this->db->query("UPDATE tb_inventory SET code = $code, category_id = $category_id, location_id = $location_id, brand = $brand, model = $model, serial_number = $serial_number, status_id = $status_id, color = $color, price = $price, date_purchase = $date_purchase, photo = '$photo', description = $description WHERE inventory_id = ".intval($id));
 
 		return true;
 	}

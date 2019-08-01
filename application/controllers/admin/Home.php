@@ -14,11 +14,16 @@ class Home extends CI_Controller
 
 	public function index()
 	{
-		$data["inventory"] = $this->Mhome->getJumlahInventory();
-		$data["category"] = $this->Mhome->getJumlahCategory();
-		$data["location"] = $this->Mhome->getJumlahLocation();
-		$data["status"] = $this->Mhome->getJumlahStatus();
-		$this->load->view("admin/home", $data);
+		if ($this->session->userdata('isloggedin')) {
+			$data["inventory"] = $this->Mhome->getJumlahInventory();
+			$data["category"] = $this->Mhome->getJumlahCategory();
+			$data["location"] = $this->Mhome->getJumlahLocation();
+			$data["status"] = $this->Mhome->getJumlahStatus();
+			$this->load->view("admin/home", $data);
+		}else{
+			redirect('admin/users/login');
+		}
+		
 	}
 
 

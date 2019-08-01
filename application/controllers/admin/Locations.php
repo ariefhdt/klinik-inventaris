@@ -13,8 +13,13 @@ class Locations extends CI_Controller
 
 	public function index()
 	{
-		$data["locations"] = $this->Mlocations->getAll();
-		$this->load->view("admin/location/vListLocation", $data);
+		if ($this->session->userdata('isloggedin')) {
+			$data["locations"] = $this->Mlocations->getAll();
+			$this->load->view("admin/location/vListLocation", $data);
+		}else{
+			redirect('admin/users/login');
+		}
+		
 	}
 
 	public function add()

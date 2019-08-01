@@ -94,8 +94,15 @@
 
       <li class="nav-item <?php echo $this->uri->segment(2)== 'report'? 'active': ''?>">
         <a class="nav-link" href="<?php echo site_url("admin/report")?>">
-          <i class="fas fa-fw fa-memory"></i>
+          <i class="fas fa-fw fa-clipboard-list"></i>
           <span>Report</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url("admin/users/logout")?>">
+          <i class="fas fa-fw fa-power-off"></i>
+          <span>Logout</span>
         </a>
       </li>
 <!-- 

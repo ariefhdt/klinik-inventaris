@@ -13,8 +13,13 @@ class Inventory extends CI_Controller
 
 	public function index()
 	{
-		$data["inventories"] = $this->Minventory->getAll();
-		$this->load->view("admin/inventory/vListInventory", $data);
+		if ($this->session->userdata('isloggedin')) {
+			$data["inventories"] = $this->Minventory->getAll();
+			$this->load->view("admin/inventory/vListInventory", $data);
+		}else{
+			redirect('admin/users/login');
+		}
+		
 	}
 
 	public function lihat($id)

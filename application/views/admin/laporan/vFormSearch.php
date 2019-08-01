@@ -5,7 +5,7 @@
 			<label>Category</label>
 			<select class="form-control" name="category_id">
 				<?php
-					echo '<option value="">--semua kategori--</option>';
+					echo '<option value="0">--semua kategori--</option>';
 					foreach ($categories as $a) {
 						echo '<option value="'.$a->category_id.'">'.$a->category_name.'</option>';
 					}
@@ -17,7 +17,7 @@
 			<label>Location</label>
 			<select class="form-control" name="location_id">
 				<?php
-					echo '<option value="">--semua lokasi--</option>';
+					echo '<option value="0">--semua lokasi--</option>';
 					foreach ($locations as $c) {
 						echo '<option value="'.$c->location_id.'">'.$c->location_name.'</option>';
 					}
@@ -29,7 +29,7 @@
 			<label>Status</label>
 			<select class="form-control" name="status_id">
 				<?php
-					echo '<option value="">--semua status--</option>';
+					echo '<option value="0">--semua status--</option>';
 					foreach ($statuses as $b) {
 						echo '<option value="'.$b->status_id.'">'.$b->status_name.'</option>';
 					}

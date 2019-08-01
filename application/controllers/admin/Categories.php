@@ -12,8 +12,13 @@ class Categories extends CI_Controller
 	}
 	function index()
 	{
-		$data["categories"] = $this->Mcategories->getAll();
-		$this->load->view("admin/categories/vListCategories", $data);
+		if ($this->session->userdata('isloggedin')) {
+			$data["categories"] = $this->Mcategories->getAll();
+			$this->load->view("admin/categories/vListCategories", $data);
+		} else{
+			redirect('admin/users/login');
+		}
+		
 	}
 
 	public function add()

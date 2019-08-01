@@ -13,8 +13,12 @@ class Status extends CI_Controller
 
 	public function index()
 	{
-		$data["status"] = $this->Mstatus->getAll();
+		if ($this->session->userdata('isloggedin')) {
+			$data["status"] = $this->Mstatus->getAll();
 		$this->load->view("admin/status/vListStatus", $data);
+		}else{
+			redirect('admin/users/login');
+		}
 	}
 
 	public function add()
